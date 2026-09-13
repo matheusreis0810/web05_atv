@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+#logotipo{
+    width: 200px;
+}
+header{
+    background-color: black;
+    color:white;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+footer{
+    background-color: black;
+    color:white;
+    padding:10px;
+    margin-top:20px;
+}
+body { 
+    background-color: whitesmoke;  /*inserido*/
+    margin:0; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*janela usada no login*/   
+
+#senha{
+    background-color: lightyellow;
+    color: black !important;
+}
+
+.janela{
+    width: 80%;
+    margin-left: 10%;
+    background-color: lightgray;
+    border: 2px white solid;
+    padding: 5px;
+}
+
+@media screen and (orientation: portrait){
+    body{margin:0;}
+    .janela{
+        width: 100%;
+        margin-left: 0px;
+    }
+}
