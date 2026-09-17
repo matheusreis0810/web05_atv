@@ -1,1 +1,20 @@
-<p>detalhe works!</p>
+<div class="col">
+    <b>{{produto.nome}}</b><br>
+
+    <img src="{{produto.codigo}}.jpg" width="200px"><br>
+    <div>
+        <div *ngIf="produto.valorPromo > 0">
+            de: <s>R$ {{produto.valor}}</s><br>
+            por: R$ {{produto.valorPromo}}
+        </div>
+        <div *ngIf="produto.valorPromo <= 0">
+            por: R$ {{produto.valor}}
+        </div>
+    </div>
+    Descrição: {{produto.descritivo}}<br>
+    Estoque: {{produto.estoque}}<br>
+    Destaque: {{produto.destaque}}<br><br>
+    <div *ngIf="produto.estoque > 0">
+        <button type="button" class="btn btn-success">Comprar</button>
+    </div>
+</div>

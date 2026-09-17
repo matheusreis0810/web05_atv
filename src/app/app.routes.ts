@@ -11,7 +11,7 @@ import { Vitrine } from './vitrine/vitrine';
 export const routes: Routes = [
     {path:"cadastro", component:Cadastro},
     {path:"cesta", component:Cesta},
-    {path:"detalhe", component:Detalhe},
+    {path:"detalhe/:codigo", component:Detalhe},
     {path:"login", component: Login},
     {path:"pedido", component: Pedido},
     {path:"reenvio",component:Reenvio},
