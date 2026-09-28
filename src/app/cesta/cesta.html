@@ -1,1 +1,36 @@
-<p>cesta works!</p>
+<h2>Minha cesta</h2>
+<p class="alert alert-warning" *ngIf="mensagem">{{ mensagem }}</p>
+<div class="row mb-3" *ngFor="let item of itens">
+    <div class="col-6 card">
+        <img src="{{item.produto.codigo}}.jpg" class="card-img-top" width="200px"><br>
+    </div>
+    <div class="col-6 card">
+        <div class="card-body">
+            <h4 class="card-title">{{item.produto.nome}}</h4>
+            <div class="card-text">
+                {{item.produto.descritivo}}
+                <br><br>
+            </div>
+            <div class="card-text" *ngIf="item.produto.valorPromo>0">
+                de: <s>R$ {{item.produto.valor}}</s><br>
+                por: R$ {{item.produto.valorPromo}}
+            </div>
+            <div class="card-text" *ngIf="item.produto.valorPromo<=0">
+                por: R$ {{item.produto.valor}}
+            </div>
+            <br>
+            <div class="card-text">
+                Quantidade: <strong>{{item.quantidade}}</strong><br>
+                Valor total: <strong>{{item.valorTotal | currency:'BRL'}}</strong>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" *ngIf="itens.length > 0">
+    <div class="card-body text-end">
+        <h4>Total da cesta: {{total | currency:'BRL'}}</h4>
+        <button type="button" class="btn btn-danger" (click)="limparCesta()">Limpar cesta</button>
+    </div>
+    <a href="./" class="btn btn-secondary w-25">Continuar comprando</a>
+</div>

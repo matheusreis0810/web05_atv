@@ -1,20 +1,22 @@
-<div class="col">
-    <b>{{produto.nome}}</b><br>
-
-    <img src="{{produto.codigo}}.jpg" width="200px"><br>
-    <div>
-        <div *ngIf="produto.valorPromo > 0">
-            de: <s>R$ {{produto.valor}}</s><br>
-            por: R$ {{produto.valorPromo}}
-        </div>
-        <div *ngIf="produto.valorPromo <= 0">
-            por: R$ {{produto.valor}}
-        </div>
+<div class="row">
+    <div class="col-6 card">
+        <img src="{{obj.codigo}}.jpg" class="card-img-top" width="200px"><br>
     </div>
-    Descrição: {{produto.descritivo}}<br>
-    Estoque: {{produto.estoque}}<br>
-    Destaque: {{produto.destaque}}<br><br>
-    <div *ngIf="produto.estoque > 0">
-        <button type="button" class="btn btn-success">Comprar</button>
+    <div class="col-6 card">
+        <div class="card-body">
+            <h4 class="card-title">{{obj.nome}}</h4>
+            <div class="card-text">
+                {{obj.descritivo}}
+                <br><br>
+            </div>
+            <div class="card-text" *ngIf="obj.valorPromo>0">
+                 de: <s>R$ {{obj.valor}}</s><br>
+                 por: R$ {{obj.valorPromo}}
+            </div>
+            <div class="card-text" *ngIf="obj.valorPromo<=0">
+                 por: R$ {{obj.valor}}
+            </div>
+            <button class="btn btn-success w-50" *ngIf="obj.estoque>0" (click)="adicionarCesta(obj)">Comprar</button>
+        </div>
     </div>
 </div>
